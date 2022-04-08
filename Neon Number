@@ -1,0 +1,42 @@
+/* Write a java program to print whether the given number is Neon Number or not.
+
+A Neon Number is a number where the sum of the digits of square of the number 
+is equal to the number itself.
+Ex: A number 9 and its square is 81 (9*9). 
+    81 digits sum(8+1) = 9
+
+Sample:
+9 //input
+Neon Number //output
+
+Sample 2:
+5 //input
+Not Neon Number //output
+
+*/
+import java.util.*;
+class Test
+{
+    public static void main(String args[])
+    {
+        int sum=0;
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int square=n*n;
+        while(square!=0)
+            {
+            int temp=square%10; 
+            sum=sum+temp;
+            square=square/10;
+            }
+        
+        if(sum==n)
+        {
+            System.out.println("Neon Number");
+        }
+        else
+        {
+            System.out.println("Not Neon Number");
+        }
+    }
+}
