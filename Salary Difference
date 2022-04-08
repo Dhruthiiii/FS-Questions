@@ -1,0 +1,72 @@
+/* 
+You hired three programmers and you (hopefully) pay them. 
+Write a java program that takes three numbers (the hourly wages of each programmer) and 
+returns the difference between the highest-paid programmer and the lowest-paid.
+
+Samples : 
+input
+-----
+147 33 526 
+output
+------ 
+493
+
+input
+-----
+33 72 74 
+output
+------ 
+41
+
+input
+-----
+1 5 9 
+output
+------ 
+8
+
+
+*/
+import java.util.*;
+class Test
+{
+public static void main(String args[])
+{
+    Scanner sc=new Scanner(System.in);
+    int a=sc.nextInt();
+    int b=sc.nextInt();
+    int c=sc.nextInt();
+    int difference=0;
+    
+        if(a>b && b>c || a>b && b==c)   
+        {
+            difference=a-c; 
+            System.out.println(difference);
+        }
+        else if(a>c && c>b || a>c && c==b)  
+        {
+            difference=a-b; 
+            System.out.println(difference);
+        }
+        else if(b>a && a>c || b>a && a==c)   
+        {
+            difference=b-c;
+            System.out.println(difference);
+        }
+        else if(b>c && c>a|| b>c && c==a)
+        {
+            difference=b-a;
+            System.out.println(difference);
+        }
+        else if(c>a && a>b|| c>a && a==b)
+        {
+            difference=c-b;
+            System.out.println(difference);
+        }
+        else if(c>b && b>a || c>b && b==a)
+        {
+            difference=c-a;
+            System.out.println(difference);
+        }
+}
+}
