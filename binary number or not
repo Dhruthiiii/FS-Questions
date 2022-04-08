@@ -1,0 +1,38 @@
+/*Write a java program to check whether the entered number is binary number or not
+
+Sample 1:
+input=111100
+output=true
+	Sample 2:
+	input=1120 
+	output=false
+*/
+import java.util.*;
+public class Test 
+{
+    public static boolean solve(long n) 
+    {
+        while(n > 0) 
+        {
+           if(n % 10 > 1) 
+           {   //checking with each digit suppose if the no. has >1 other than 0&1,then it is clearly not binary but a decimal no.  
+                return false;
+            }
+            n = n / 10;
+        }
+        return true;
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long num = sc.nextLong();
+        if(num < 0) 
+        {
+            System.out.print("false");
+            System.exit(0);
+        }
+        else 
+        {
+            System.out.print(solve(num));
+        }
+    }
+}
