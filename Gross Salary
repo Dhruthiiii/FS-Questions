@@ -1,0 +1,67 @@
+/*Write a Java program 
+Create an employee class to read employee details like Empno, name and 
+basic salary then calculate the gross salary of an employee with respect to 
+specified conditions mentioned below and then print basic details along with gross.
+
+If Basic salary<=10k then HRA=20%; DA=80%
+If Basic salary<=20k then HRA=25%;DA=90%
+If Basic salary>20k then HRA=30%;DA=95%
+Gross salary= Basic salary + HRA+ DA
+
+Sample:
+Input=
+Enter the employee id:101
+Enter the employee’s name: Varun
+Enter the basic salary of an employee:25000
+Output=
+Id: 101
+Name: Varun
+Basic salary: 25000
+Gross salary: 56250.0
+*/
+
+import java.util.*;
+class Test
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the employee id:");
+        int e_id=sc.nextInt();
+        
+        System.out.println("Enter the employee’s name:");
+        String e_name=sc.next();
+        
+        System.out.println("Enter the basic salary of an employee");
+        int e_sal=sc.nextInt();
+        
+        float hra,da;
+        double gSal;
+        
+        System.out.println("Id:" +e_id);
+        System.out.println("Name:" +e_name);
+        System.out.println("Basic Salary:" +e_sal);
+        
+        double sal=e_sal;
+        if(e_sal<=10000)
+        {
+            hra=0.2f;
+            da=0.8f;
+            gSal=e_sal+hra+da;
+        }
+        else if(e_sal<=20000)
+        {
+            hra=2.5f;
+            da=0.9f;
+            gSal=e_sal+hra+da;
+        }
+        else
+        {
+            hra=0.3f;
+            da=9.5f;
+            gSal=e_sal+hra+da;
+        }
+        System.out.println("Gross Salary:" +gSal);
+      
+    }
+}
