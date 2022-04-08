@@ -1,0 +1,32 @@
+/* Write a Java Program to Convert Integer Values into Binary.
+
+
+Sample Input :
+10
+Sample output : 
+1010 
+
+*/
+
+import java.util.*;
+class DecimalToBinaryUsingString
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+int n = sc.nextInt();
+String b="";
+//StringBuffer b=new StringBuffer();
+int t=n;
+while(t > 0)
+	{
+//b.append(n % 2);
+
+t=t/2;
+b=b+ (t%2);
+//n=n/2;
+	}
+//System.out.println(b.reverse());
+System.out.println(b);
+}
+}
