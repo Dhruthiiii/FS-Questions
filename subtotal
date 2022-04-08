@@ -1,0 +1,55 @@
+/*Write a java program to solve below scenario.
+
+In this challenge, a farmer is asking you to tell him 
+how many legs can be counted among all his animals? 
+The farmer breeds three species:
+
+chickens = 2 legs
+cows = 4 legs
+pigs = 4 legs
+The farmer has counted his animals and he give you a subtotal for each species. 
+You have to implement logic that returns the total number of legs of all the animals.
+
+Examples
+Sample input:
+2   
+3     
+5
+output: 36
+
+Sample input:
+1 
+2   
+3
+output: 22
+
+Sample input:
+5  
+2   
+8
+output: 50
+
+Notes
+The order of animals passed is animals (chickens, cows, pigs).
+Remember that the farmer wants to know the total number of legs and not the total number of animals.
+if given number is negative then print "Invalid"
+*/
+
+import java.util.*;
+class Test
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int chickens=sc.nextInt();
+        int cows=sc.nextInt();
+        int pigs=sc.nextInt();
+        if(chickens>=0 && cows>=0 && pigs>=0)
+        {
+            int total = ((chickens*2) + (cows*4) + (pigs*4));
+            System.out.println(total);
+        }
+        else
+        System.out.println("Invalid");
+    }
+}
