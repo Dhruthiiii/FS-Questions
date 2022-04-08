@@ -1,0 +1,33 @@
+/* Write a java program with following scenario.
+
+User has to take two integers (hours, minutes), converts them to seconds, return the total time
+in seconds.
+
+Examples
+input:
+1  
+3
+output: 3780
+
+sample input:
+2  
+0
+output:7200
+
+input:0 
+0
+output: 0
+
+*/
+
+import java.util.*;
+class Test 
+{
+    public static void main (String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int hour = sc.nextInt();
+        int min = sc.nextInt();
+        System.out.println(3600 * hour + 60 * min);
+    }
+}
