@@ -1,0 +1,50 @@
+/* Write a java program to input cost price and selling price of a product 
+and check profit or loss. 
+
+Also calculate total profit or loss using if else. 
+
+
+Sample :
+//input
+1000 //cost price
+1500 //selling price
+//output
+Profit : 500
+
+Sample 2:
+//input
+1500 //cost price
+1000 //selling price
+//output
+Loss : 500
+
+Sample 2:
+//input
+1000 //cost price
+1000 //selling price
+//output
+No Profit No Loss.
+
+*/
+import java.util.*;
+class Test
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int costprice=sc.nextInt();
+        int sellingprice=sc.nextInt();
+        if(sellingprice>costprice)
+        {
+            int profit=sellingprice-costprice;
+            System.out.println("Profit : "+profit);
+        }
+        else if(costprice>sellingprice)
+        {
+            int loss=costprice-sellingprice;
+            System.out.println("Loss : "+loss);
+        }
+        else
+        System.out.println("No Profit No Loss");
+    }
+}
