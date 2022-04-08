@@ -1,0 +1,27 @@
+/*Write a Java program to print the largest digit of a given positive number. 
+
+Sample 1:
+input = 12534
+output = 5
+
+Sample 2:
+input = 100
+output = 1
+*/
+import java.util.*;
+public class Test 
+{
+    public static void main (String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        int max = Integer.MIN_VALUE;
+        while(n > 0) 
+        {
+            int current = n % 10;
+            max = Math.max(max,current);
+            n / = 10;
+        }
+        System.out.println(max);
+    }
+}
