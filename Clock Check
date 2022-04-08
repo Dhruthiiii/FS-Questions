@@ -1,0 +1,96 @@
+
+/* Write a program to read the two integer values from a user.
+First integer say time in hours.
+Second integer says time in minutes.
+Considering above two values and print them in words.
+
+Sample1
+//input
+5//hours
+0//minutes
+//output
+5:00 — five o’ clock
+
+Sample2
+//input
+5//hours
+10//minutes
+//output
+5:10 — ten minutes past five
+
+Sample3
+//input
+5//hours
+15//minutes
+//output
+5:15 — quarter past five
+
+Sample4
+//input
+5//hours
+30//minutes
+//output
+5:30 — half past five
+
+Sample5
+//input
+5//hours
+40//minutes
+//output
+5:40 — twenty minutes to six
+
+Sample6
+//input
+5//hours
+45//minutes
+//output
+5:45 — quarter to six
+
+Sample7
+//input
+5//hours
+31//minutes
+//output
+5:31 — twenty nine minutes to six
+*/
+
+// Java program to convert time into words
+
+import java.util.*;
+class Test
+{
+public static void main(String args[])
+{
+    Scanner sc=new Scanner(System.in);
+    int h=sc.nextInt();
+    int m=sc.nextInt();
+		String nums[] = {"zero", "one", "two", "three", "four","five", "six", "seven", "eight", "nine","ten",
+		"eleven", "twelve", "thirteen","fourteen", "fifteen", "sixteen","seventeen","eighteen", "nineteen", "twenty", 
+		"twenty one","twenty two", "twenty three", "twenty four","twenty five", "twenty six", "twenty seven",
+							"twenty eight", "twenty nine"};
+	
+		if (m == 0)
+			System.out.println(h+":0"+m+" — "+nums[h] + " o’ clock ");
+	
+		else if (m == 1)
+			System.out.println(h+":"+m+" — "+"one minute past " +nums[h]);
+	
+		else if (m == 59)
+			System.out.println(h+":"+m+" — "+"one minute to " +nums[(h % 12) + 1]);
+	
+		else if (m == 15)
+			System.out.println(h+":"+m+" — "+"quarter past " + nums[h]);
+	
+		else if (m == 30)
+			System.out.println(h+":"+m+" — "+"half past " + nums[h]);
+	
+		else if (m == 45)
+			System.out.println(h+":"+m+" — "+"quarter to " + nums[(h % 12) + 1]);
+	
+		else if (m <= 30)
+			System.out.println(h+":"+m+" — "+nums[m] + " minutes past " +nums[h]);
+	
+		else if (m > 30)
+			System.out.println(h+":"+m+" — "+ nums[60 - m] + " minutes to " +	nums[(h % 12) + 1]);
+	}
+}
