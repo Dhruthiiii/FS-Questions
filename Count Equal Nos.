@@ -1,0 +1,50 @@
+/* Write a java program that takes three integers a, b, c 
+and returns the number of integers which are of equal value.
+
+Samples:
+input
+----- 
+3 4 3 
+output
+------ 
+2
+
+input
+-----
+1 1 1 
+output
+------ 
+3
+
+input
+-----
+3 4 1 
+output
+------ 
+0
+
+*/
+import java.util.*;
+class Test
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+
+        if(a==b && b==c && c==a)
+        {
+            System.out.println("3");
+        }
+        else if (a==b || a==c || b==c)
+        {
+            System.out.println("2");
+        }
+        else 
+        {
+            System.out.println("0");
+        }
+    }
+}
