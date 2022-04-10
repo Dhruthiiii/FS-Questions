@@ -1,0 +1,65 @@
+/* Write a java program to read an array of integers and check if the numbers are
+jolly sequence or not. 
+
+If jolly jumper sequence print 1 else print -1
+
+Jolly Jumper sequence 
+A sequence of n numbers is called Jolly Jumper if the absolute values of the differences
+between the successive elements take on all possible values from 1 through n-1. 
+The definition implies that any sequence of a single integer is a jolly jumper sequence.
+
+First Line contains the size of the array followed by array elements 
+Examples:
+
+input = 
+4
+1 4 2 3
+output = 1
+
+Explanation :- This sequence 1 4 2 3 is Jolly Jumper because
+the absolute differences are 3, 2, and 1.
+
+input = 
+5
+1 4 2 -1 6  
+output = -1
+
+Explanation :- The absolute differences are 3, 2, 3, 7. 
+This does not contain  all the  values from 1 
+through n-1. So, this sequence is not Jolly .
+
+*/
+
+import java.util.*;
+class Test
+{
+    static boolean Jolly(int a[],int n)
+    {
+	boolean []diff = new boolean[n];
+
+	for (int i = 0; i < n - 1 ; i++)
+	{
+		int d = Math.abs(a[i] - a[i + 1]);
+		if (d == 0 || d > n - 1 || diff[d] == true)
+			return false;
+		diff[d] = true;
+	}
+	return true;
+}
+public static void main(String args[])
+{
+	Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int a[]=new int[n];
+    
+    for(int i=0;i < a.length;i++)
+    {
+        a[i]=sc.nextInt();
+    }
+    
+	if(Jolly(a, n))
+		System.out.println("1");
+	else
+		System.out.println("-1");
+}
+}
