@@ -1,0 +1,32 @@
+/* Write a java program to find vowel and consonant count in a string
+
+Sample
+input =
+hello
+
+output =
+vowel count is 2
+consonant count is 3
+*/
+
+import java.util.*;
+class Test
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+    String str = sc.next();
+    str=str.toLowerCase();
+    int vowel_count=0;
+    int conso_count=0;
+    for(int i=0;i < str.length(); i++)
+    {
+        if(str.charAt(i)=='a' || str.charAt(i)=='e' ||str.charAt(i)=='i' || str.charAt(i)=='o' ||str.charAt(i)=='u')
+            vowel_count++;
+        else
+            conso_count++;
+    }
+    System.out.println("vowel count is "+vowel_count);
+    System.out.println("consonant count is "+conso_count);
+    }
+}
