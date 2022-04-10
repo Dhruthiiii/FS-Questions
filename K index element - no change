@@ -1,0 +1,57 @@
+/*write a java program to read an array of Strings and sort the 
+array in ascending order except one K index element.
+Note:
+input contains both small & captial letters
+k value starts  from 0
+for other boundary conditions print -1.
+for example:
+
+input = kmit ngit jntu iiit
+1
+output = iiit ngit jntu kmit
+
+
+case = 2
+input =ramesh Ramesh kmit Kmit ngit Ngit
+4
+output =Kmit Ngit Ramesh kmit ngit ramesh
+
+*/
+import java.util.*;
+class Test
+
+{
+    public static int Logic(String words[],int len,int k)
+    {
+            String temp = words[k];
+            words[k] = words[len-1];
+            words[len-1] = temp;
+            
+            Arrays.sort(words,0,len-1);
+            String last = words[len-1];
+            
+            for(int i=len-1; i> k; i--)
+                words[i] = words[i-1];
+                
+            words[k] = last;
+        return 0;
+    }
+    public static void main(String args[])
+    {
+        Scanner sc= new Scanner(System.in);
+        String str = sc.nextLine();
+        
+        String words[] = str.trim().split(" ");
+        int k = sc.nextInt();
+        
+        int len =words.length;
+        
+        Logic(words, len, k);
+        for(int i=0; i< len ; i++)
+            System.out.print(words[i]+" ");
+        
+    }
+}
+
+
+GRADE: 75 /100
