@@ -1,0 +1,20 @@
+/* Write a java program to remove duplicate words from the sentence
+sample 
+input = Good morning good afternoon Good evening
+output = Good morning afternoon evening
+*/
+import java.util.*;
+
+class Test
+{
+    public static void main(String[] args)
+{
+        Scanner sc = new Scanner(System.in);
+        String[] s = sc.nextLine().split(" ");
+        Set<String> set = new LinkedHashSet<>(Arrays.asList(s));
+        //System.out.print(set);
+        Iterator it = set.iterator();
+        while(it.hasNext())
+            System.out.print(it.next() + " ");
+    }
+}
