@@ -1,0 +1,43 @@
+/* Write a Program to Find the next smallest palindrome number of given number
+
+For example:
+
+input = 1221
+output = 1331 
+
+input = 5
+output = 6
+*/
+import java.util.*;
+class Test
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int num = n;
+        int sum = 0;
+       
+       
+            
+       while(n > 0)
+        {
+          int rem = n%10;
+          sum = (sum * 10)+ rem;
+          n = n/10;
+        }
+            
+        if(num == sum)
+        {
+            if( sum >=0 && sum<10 )
+                System.out.println(sum+1);
+            if( sum>9 && sum<100 )
+                System.out.println(sum + 11);
+            if( sum>99 && sum<1000 )
+                System.out.println(sum+10);
+            if( sum>999 && sum<1500 )
+                System.out.println(sum + 110);    
+        }
+    }
+}
+
