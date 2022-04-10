@@ -1,0 +1,38 @@
+/*Write a program to check if two numbers are anagrams or not 
+
+//input 
+123
+321
+//output
+ANAGRAM
+
+//input
+121
+113
+//output
+NOT ANAGRAM
+
+If Anagram Number print ANAGRAM else print NOT ANAGRAM
+*/
+import java.util.*;
+class Test
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 =sc.nextInt();
+        int sum = 0;
+        int temp = n1;
+        while(temp > 0)
+        {
+            sum = sum*10 + temp % 10;
+            temp = temp /10;
+        }
+        if(n2 == sum)
+            System.out.println("ANAGRAM");
+        else
+            System.out.println("NOT ANAGRAM");
+        
+    }
+}
