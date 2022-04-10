@@ -1,0 +1,68 @@
+/* Given a list of words and a specific word 
+print out all the words which contain all the characters of that specific word
+the characters may be in any order. 
+
+The words are case insensitive 
+If no such word occurs print -1 
+print the words in the order they occur
+
+sample test cases
+input = hai varun good morning in unsorted
+run
+output = varun
+
+Explanation: - 
+Varun has all the characters of the word run
+unsorted also has all the characters of the word run 
+
+the first line contains the group of words 
+and the second line contains the specific word 
+
+
+input = ZYXWVU TSrqpo nmijklabc FED
+NImbA
+output =
+nmijklabc
+
+*/
+/*import java.util.*;
+class Test
+{
+    public static int Logic(String str, String search)
+    {
+        int check = 0;
+        char word = ' ';
+        int a[] = new int[Character.MAX_VALUE+1];
+        
+         for(int i=0;i< str.length(); i++) 
+         {
+             word = str.charAt(i);
+             ++a[word];
+         }
+         for(int i=0; i< search.length(); i++) 
+         {
+             word = search.charAt(i);
+             if(a[word] >=1 )
+                check = 1;
+         }
+         if(check == 1)
+            System.out.println(str);
+    return word;        
+    }
+    
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+     
+     List<String> al = new ArrayList<String>();
+     
+     for(int i=0;i< al.size(); i++)
+         al.add(sc.nextLine());
+         
+    //System.out.println("");
+    
+    String search = sc.next();    
+     for(int j=0; j< al.size(); j++)    
+        Logic(al.get(j),search);
+    }
+}
