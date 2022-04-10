@@ -1,0 +1,37 @@
+
+/* Write a java program to find and print number of words in a line
+    and also print the words along with its length
+    
+    sample
+    welcome to ngit //input
+    //output
+    word count = 3
+    welcome = 7
+    to = 2
+    ngit = 4
+    
+*/
+import java.util.*;
+class Test
+{
+  public static void main(String args[])
+    {
+        String str="welcome to ngit";
+        int count=str.split("\\s").length;
+        System.out.println("word count = "+ count);
+        
+        char[] ch = str.toCharArray();
+        for(int i=0; i< ch.length; i++)
+        {
+            String s ="";
+            while(i<ch.length && ch[i] !=' ')
+            {
+                s=s+ch[i];
+                i++;
+            }
+        
+        if(s.length() > 0)
+            System.out.println(s+" = "+ s.length());
+        } 
+    }
+}
