@@ -1,0 +1,38 @@
+/* write a program to print the following pattern. Take the user input n, where n is 
+number of lines
+
+for example:
+input = 5
+output =
+        1 
+      2 3 2
+    3 4 5 4 3
+  4 5 6 7 6 5 4
+5 6 7 8 9 8 7 6 5
+
+*/
+
+import java.util.*;
+class Test
+{
+	public static void main(String args[])
+	{
+		int i, j;
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+
+		for(i=1; i<=n; i++ )
+		{
+    		for(j=1; j<=n-i; j++) //for spaces
+    			System.out.print("  ");
+    			 
+    		for(j=i; j<= (2*i) - 1; j++) //for ascending order
+    			System.out.print(j+" ");
+    		
+        	for(j=(2*i -2) ; j>=i; j--) //for decending order
+        			System.out.print(j+" ");
+        			
+		System.out.println();
+		}
+	}
+}
