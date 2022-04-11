@@ -1,0 +1,27 @@
+Given a Sentence  , for each word If the first letter in a string is capital letter 
+then change the full string to capital letters,else change the full string to small letters.
+
+input = Welcome tO Opentext
+output= WELECOME to OPENTEXT
+
+
+*/
+import java.util.*;
+class Test
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String words[] = str.split(" ");
+        
+        for(int i=0; i<words.length; i++)
+        {
+        if(Character.isUpperCase(words[i].charAt(0)))
+            System.out.print(words[i].toUpperCase()+" ");
+            
+        if(Character.isLowerCase(words[i].charAt(0)))
+            System.out.print(words[i].toLowerCase()+" ");
+        }
+    }
+}
